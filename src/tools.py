@@ -15,8 +15,9 @@ def _find_product(name):
     return None
 
 
-def get_product_info(name):
+def get_product_info(name: str) -> dict:
     """Return the price, colors, sizes and description of a product."""
+    print(f"[tool called: get_product_info({name!r})]")
     product = _find_product(name)
     if product is None:
         return {"found": False, "message": "Product not found in the catalog."}
@@ -30,8 +31,9 @@ def get_product_info(name):
     }
 
 
-def check_stock(name, size):
+def check_stock(name: str, size: str) -> dict:
     """Say if a product is in stock in a given size."""
+    print(f"[tool called: check_stock({name!r}, {size!r})]")
     product = _find_product(name)
     if product is None:
         return {"found": False, "message": "Product not found in the catalog."}
