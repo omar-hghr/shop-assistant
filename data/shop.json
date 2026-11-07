@@ -1,0 +1,23 @@
+{
+  "shop_name": "Demo Wear",
+  "products": [
+    {"name": "Black Hoodie", "price_egp": 850, "sizes": {"S": true, "M": true, "L": true, "XL": false}, "colors": ["black"], "description": "Heavy cotton hoodie, regular fit"},
+    {"name": "White T-Shirt", "price_egp": 350, "sizes": {"S": true, "M": true, "L": false, "XL": true}, "colors": ["white", "black"], "description": "Cotton t-shirt, oversized fit"},
+    {"name": "Blue Jeans", "price_egp": 950, "sizes": {"30": true, "32": true, "34": false}, "colors": ["blue"], "description": "Straight cut jeans"}
+  ],
+  "size_guide": "S: up to 70 kg | M: 70-80 kg | L: 80-90 kg | XL: 90-100 kg (approximate, fit may vary)",
+  "delivery": {
+    "Cairo": {"fee_egp": 50, "days": "1-2"},
+    "Giza": {"fee_egp": 50, "days": "1-2"},
+    "Alexandria": {"fee_egp": 70, "days": "2-3"},
+    "Other governorates": {"fee_egp": 90, "days": "3-5"}
+  },
+  "policies": {
+    "exchange_window_days": 14,
+    "conditions": "Unworn, tags attached, original packaging",
+    "shipping_paid_by": "Customer pays shipping for exchanges",
+    "refunds": "Handled by the owner only"
+  },
+  "payment_methods": ["Cash on delivery", "InstaPay"],
+  "working_hours": "10 AM to 10 PM, Saturday to Thursday"
+}
