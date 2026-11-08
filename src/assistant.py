@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 from google import genai
 from google.genai import errors, types
 
-from tools import check_stock, get_product_info
+from tools import check_stock, create_exchange_request, get_product_info
 
 ROOT = Path(__file__).resolve().parent.parent
 load_dotenv(ROOT / ".env")
@@ -28,8 +28,8 @@ Rules:
 - Never invent prices, stock, sizes, or delivery times.
 - If the answer is not available, say the team will confirm, and do not guess.
 - Never promise discounts or refunds.
-- If you cannot answer, or the customer is angry, asks for a human, or asks about a refund or a discount, reply briefly that the team will contact them, and add the exact tag [HANDOFF] at the end of your message. Never use [HANDOFF] in any other case.
-- If you cannot answer from the information, or the customer is angry, asks for a human, or asks about a refund, reply briefly that the team will contact them, and end your message with the tag [HANDOFF: reason], where reason is 2 to 5 words in English, for example [HANDOFF: refund request]. Never use this tag in any other case.
+- If you cannot answer from the information, or the customer is angry, asks for a human, or asks about a refund or a discount, reply briefly that the team will contact them, and end your message with the tag [HANDOFF: reason], where reason is 2 to 5 words in English, for example [HANDOFF: refund request]. Never use this tag in any other case.
+- For an exchange request: ask the customer, one or two questions at a time, for the order number, the phone number on the order, the item, the reason, what they want instead (check that it is in stock with the tools), how many days ago they received it, and whether it is unworn with tags attached. Never guess any of these. Then call create_exchange_request. If it is submitted, tell the customer the team will review it and confirm (never promise approval), and end your message with [HANDOFF: exchange EX-0001, order 1001, Black Hoodie L to XL] using the real request id, order number and items. If it is not submitted, explain the reason politely based on the policy.
 
 Shop information:
 {json.dumps(shop_info, ensure_ascii=False, indent=2)}
@@ -47,7 +47,7 @@ def create_chat():
         model=MODEL,
         config=types.GenerateContentConfig(
             system_instruction=SYSTEM_PROMPT,
-            tools=[get_product_info, check_stock],
+            tools=[get_product_info, check_stock, create_exchange_request],
         ),
     )
 

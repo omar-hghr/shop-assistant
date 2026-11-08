@@ -53,7 +53,7 @@ def log(user_id, who, text):
     transcripts.setdefault(user_id, []).append((who, text))
 
 
-def recent(user_id, n=6):
+def recent(user_id, n=14):
     items = transcripts.get(user_id, [])[-n:]
     return "\n".join(f"{who}: {text[:300]}" for who, text in items)
 
