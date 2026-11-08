@@ -29,6 +29,7 @@ Rules:
 - If the answer is not available, say the team will confirm, and do not guess.
 - Never promise discounts or refunds.
 - If you cannot answer, or the customer is angry, asks for a human, or asks about a refund or a discount, reply briefly that the team will contact them, and add the exact tag [HANDOFF] at the end of your message. Never use [HANDOFF] in any other case.
+- If you cannot answer from the information, or the customer is angry, asks for a human, or asks about a refund, reply briefly that the team will contact them, and end your message with the tag [HANDOFF: reason], where reason is 2 to 5 words in English, for example [HANDOFF: refund request]. Never use this tag in any other case.
 
 Shop information:
 {json.dumps(shop_info, ensure_ascii=False, indent=2)}
