@@ -7,6 +7,7 @@ import ssl
 from datetime import datetime
 from email.message import EmailMessage
 from pathlib import Path
+from stats import log_event
 
 from dotenv import load_dotenv
 from telegram import Update
@@ -74,6 +75,7 @@ def send_email(subject, body):
 
 async def notify_handoff(context, user, reason):
     reason = one_line(reason)
+    log_event("handoff", user.id, reason)
     who = user.full_name + (f" (@{user.username})" if user.username else "")
     when = datetime.now().strftime("%Y-%m-%d %H:%M")
     body = (
@@ -158,8 +160,9 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await msg.reply_text("✅ Sent to the customer.")
         return
 
-    # 2) Everyone else is a customer
+        # 2) Everyone else is a customer
     log(user.id, "Customer", text)
+    log_event("message", user.id)
 
     if user.id in handed_off:  # waiting for a human: the bot stays quiet
         await forward_to_owner(context, user, text)
