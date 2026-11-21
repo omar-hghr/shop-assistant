@@ -1,0 +1,16 @@
+﻿Handle,Title,Body (HTML),Vendor,Type,Published,Option1 Name,Option1 Value,Option2 Name,Option2 Value,Variant SKU,Variant Inventory Tracker,Variant Inventory Qty,Variant Inventory Policy,Variant Price,Variant Requires Shipping,Variant Taxable,Status
+black-hoodie,Black Hoodie,"Heavy cotton hoodie, regular fit",LocalBrands,Clothing,TRUE,Size,S,Color,Black,P001-S-BLA,shopify,10,deny,850,TRUE,TRUE,active
+black-hoodie,,,,,,,M,,Black,P001-M-BLA,shopify,10,deny,850,TRUE,TRUE,
+black-hoodie,,,,,,,L,,Black,P001-L-BLA,shopify,10,deny,850,TRUE,TRUE,
+black-hoodie,,,,,,,XL,,Black,P001-XL-BLA,shopify,0,deny,850,TRUE,TRUE,
+white-t-shirt,White T-Shirt,"Cotton t-shirt, oversized fit",LocalBrands,Clothing,TRUE,Size,S,Color,White,P002-S-WHI,shopify,10,deny,350,TRUE,TRUE,active
+white-t-shirt,,,,,,,M,,White,P002-M-WHI,shopify,10,deny,350,TRUE,TRUE,
+white-t-shirt,,,,,,,L,,White,P002-L-WHI,shopify,0,deny,350,TRUE,TRUE,
+white-t-shirt,,,,,,,XL,,White,P002-XL-WHI,shopify,10,deny,350,TRUE,TRUE,
+white-t-shirt,,,,,,,S,,Black,P002-S-BLA,shopify,10,deny,350,TRUE,TRUE,
+white-t-shirt,,,,,,,M,,Black,P002-M-BLA,shopify,10,deny,350,TRUE,TRUE,
+white-t-shirt,,,,,,,L,,Black,P002-L-BLA,shopify,0,deny,350,TRUE,TRUE,
+white-t-shirt,,,,,,,XL,,Black,P002-XL-BLA,shopify,10,deny,350,TRUE,TRUE,
+blue-jeans,Blue Jeans,Straight cut jeans,LocalBrands,Clothing,TRUE,Size,30,Color,Blue,P003-30-BLU,shopify,10,deny,950,TRUE,TRUE,active
+blue-jeans,,,,,,,32,,Blue,P003-32-BLU,shopify,10,deny,950,TRUE,TRUE,
+blue-jeans,,,,,,,34,,Blue,P003-34-BLU,shopify,0,deny,950,TRUE,TRUE,
