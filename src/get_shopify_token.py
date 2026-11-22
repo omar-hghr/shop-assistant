@@ -28,4 +28,5 @@ data = r.json()
 print("scope:", data.get("scope"))
 print("expires_in:", data.get("expires_in"))
 token = data.get("access_token")
-print("TOKEN:", token)
+# Never print the token itself: it can end up in screenshots and logs.
+print("token received:", bool(token))
